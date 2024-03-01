@@ -3,33 +3,54 @@
     <head>
         <meta charset="UTF-8">
         <title>
-            <h1 id="title"></h1>
+            <h1 id="title">Adam's Survey Form</h1>
         </title>
         <link rel="stylesheet" href="styles.css" />
     </head>
     
     <body>
-       <p id="description"></p> 
+        <form id="survey-form" method="post" action="">
+            <h1>Adam's Survey Form</h1>
+            <p id="description">This is my personal survey for freeCodeCamp!</p>
 
-       <form id="survey-form" method="post" action="">
-        <fieldset>
-            <legend>Personal Information</legend>
-            <label id="name-label">Enter your First Name: <input id="name" type="text" /></label>
-            <label id="lname-label">Enter your Last Name: <input id="lname" type="text" />  </label>
-            <label id="number-label">Enter your Age: <input id="number" type="number" /> </label>
-        </fieldset>
-        <fieldset>
-            <legend>Account Information</legend>
-            <label id="email-label">Enter your Email: <input id="email" type="email" /> </label>
-            <label>Enter a New Password: <input /> </label>
-            <label>Select your account type: <input /> </label>
-        </fieldset>
-        <fieldset>
-            
-        </fieldset>
-        <fieldset>
-            
-        </fieldset>
-       </form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label id="name-label" for="name">Enter your Full Name: <input id="name" type="text" placeholder="John/Jane Doe" required /></label>
+                <label id="number-label" for="number">Enter your Age: <input id="number" type="number" min="13" max="100" placeholder="21" required /> </label>
+            </fieldset>
+            <fieldset>
+                <legend>Account Information</legend>
+                <label id="email-label" for="email">Enter your Email: <input id="email" type="email" placeholder="example@email.com" required /> </label>
+                <label id="password-label" for="pass">Enter a New Password: <input id="pass" type="password" pattern="[a-z0-5]{8,0}" required /> </label>
+                <legend>Select your account type:</legend>
+                <label for="personal"><input id="personal" type="radio" name="account-type" class="inline" checked/> Personal</label>
+                <label for="education"><input id="education" type="radio" name="account-type" class="inline" /> Education</label>
+                <label for="business"><input id="business" type="radio" name="account-type" class="inline" /> Business</label>
+            </fieldset>
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label for="dropdown">How did you hear about me?
+                    <select id="dropdown" name="referral">
+                        <option value="">(Select One)</option>
+                        <option value="1">Social Media Account</option>
+                        <option value="2">freeCodeCamp.org</option>
+                        <option value="3">GitHub</option>
+                        <option value="4">Other</option>
+                    </select>
+                </label>
+                <label for="curriculum">What should I learn next? (Check all that apply)
+                    <input class="inline" id="curriculum" name="front-end" type="checkbox" />Front End Development
+                    <input class="inline" id="curriculum" name="javascript" type="checkbox" />JavaScript
+                    <input class="inline" id="curriculum" name="back-end" type="checkbox" />Back End Development
+                    <input class="inline" id="curriculum" name="all" type="checkbox" checked />All of them!
+                </label>
+                <label for="user-info">Do you know any programming languages?
+                    <textarea id="user-info" rows="3" cols="30" placeholder="I first learned c++!"></textarea>
+                </label>            
+            </fieldset>
+            <fieldset>
+                <input type="submit" value="submit" />
+            </fieldset>
+        </form>
     </body>
 </html>
