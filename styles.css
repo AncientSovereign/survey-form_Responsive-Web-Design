@@ -1,8 +1,6 @@
-/* TODO: Add Title element */
-
-title {
-    margin-top: 1em;;
-
+#title {
+    padding-top: 1em;
+    background-color: #1b1b32;
 }
 
 body {
